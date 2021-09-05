@@ -1,80 +1,80 @@
-<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<!doctype html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="" name="description">
-    <meta content="" name="author">
-    <link href="../../favicon.ico" rel="icon"/>
+    <meta content="Mark Otto, Jacob Thornton, and Bootstrap contributors" name="author">
+    <meta content="Hugo 0.87.0" name="generator">
+    <title>Top navbar example · Bootstrap v5.1</title>
 
-    <title>Navbar Template for Bootstrap</title>
-
+    <link href="https://getbootstrap.com/docs/5.1/examples/navbar-static/" rel="canonical">
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.0/css/bootstrap.css}"/>
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="navbar-top.css" rel="stylesheet">
 </head>
 <body>
-<div class="container">
-    <!-- Static navbar -->
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button aria-controls="navbar" aria-expanded="false" class="navbar-toggle collapsed"
-                        data-target="#navbar"
-                        data-toggle="collapse" type="button">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#" th:text="${username}">Project name</a>
-            </div>
-            <div class="navbar-collapse collapse" id="navbar">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li class="dropdown">
-                        <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown"
-                           href="#"
-                           role="button">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li class="divider" role="separator"></li>
-                            <li class="dropdown-header">Nav header</li>
-                            <li><a href="#">Separated link</a></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Static top</a></li>
-                    <li><a href="#/">Fixed top</a></li>
-                </ul>
-            </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
-    </nav>
-    <!-- Main component for a primary marketing message or call to action -->
-    <div class="jumbotron">
-        <!--Usage of models we wrote in WepAppController th:text="'Welcome to basic Bootstrap with Spring Boot created by ' + ${username} -->
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Top navbar</a>
+        <button aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler" data-bs-target="#navbarCollapse" data-bs-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                    <a aria-current="page" class="nav-link active" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a aria-disabled="true" class="nav-link disabled" href="#" tabindex="-1">Disabled</a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input aria-label="Search" class="form-control me-2" placeholder="Search" type="search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+        <a class="navbar-brand" href="#" th:text="${username}">Project name</a>
+    </div>
+</nav>
+
+<main class="container">
+    <div class="bg-light p-5 rounded">
+        <h1>Navbar example</h1>
         <h3 th:text="'Welcome to basic Bootstrap with Spring Boot created by ' + ${username}"></h3>
         <p th:text="'This date example  ' + ${#dates.format(datetime, 'dd MMM yyyy HH:mm')}"></p>
         <p> is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work.
             It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-        <p>
-            <a class="btn btn-lg btn-primary" href="#" role="button">View navbar docs &raquo;</a>
-        </p>
+        <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll,
+            this navbar remains in its original position and moves with the rest of the page.</p>
+        <a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/5.1/components/navs-tabs/" role="button"
+           target="_blank">View navbar docs &raquo;</a>
     </div>
-</div> <!-- /container -->
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</main>
 <script th:href="@{/webjars/bootstrap/5.1.0/js/bootstrap.js}"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 </body>
 </html>
