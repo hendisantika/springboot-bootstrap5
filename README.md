@@ -4,4 +4,5 @@
 
 1. Clone this repository: `git clone https://github.com/hendisantika/springboot-bootstrap5.git`
 2. Navigate to the folder: `cd springboot-bootstrap5`
-3. Open your favorite browser: http://localost:8080
+3. Run the application: `mvn clean spring-boot:run`
+4. Open your favorite browser: http://localost:8080
