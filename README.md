@@ -6,3 +6,9 @@
 2. Navigate to the folder: `cd springboot-bootstrap5`
 3. Run the application: `mvn clean spring-boot:run`
 4. Open your favorite browser: http://localost:8080
+
+### Image Screen shot
+
+Index Page
+
+![Index Page](img/index.png "Index Page")
